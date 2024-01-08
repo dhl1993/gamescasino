@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules & bonus</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #162447;
+            color: #e4f9f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .col {
+            margin: 10px;
+            min-height: 300px; /* Set a minimum height for better appearance */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .rules-box, .bonus-box {
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: rgba(2, 2, 14, 0.9); /* Slightly transparent white background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007bff; /* Add border at the bottom of h2 */
+            padding-bottom: 10px; /* Add padding to create space between text and border */
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+        }
+
+        .go-back-btn {
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.1s;
+        }
+
+        .animated-emoji {
+            font-size: 2em;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .animated-emoji:hover {
+            animation: bounce 0.8s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rules-box">
+                    <h2><span class="animated-emoji">📜</span>Cash Out Rules</h2>
+                    <div class="content">
+                        <p>Min cash out is 3x of loaded</p>
+                        <p>Max cash out is 10x of loaded</p>
+                        <p>Less than 20% deposit Min/Max cash out is $60</p>
+                        <p>Less than 10% deposit Min/Max cash out is $30</p>
+                        <p>Point should be 50</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="bonus-box">
+                    <h2><span class="animated-emoji">🎁</span>Bonus</h2>
+                    <div class="content">
+                        <p>15% regular bonus minimum deposit of $20</p>
+                        <p>20% Regular bonus for deposit above $30</p>
+                        <p>20% referral bonus deposit over $30</p>
+                        <p>5% referral bonus for min deposit of $10</p>
+                        <p>100% Signup on deposit of $10 or more</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="../homepage/index.html" class="btn btn-primary go-back-btn"><span class="animated-emoji">🏠</span>Go Back to Home</a>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
