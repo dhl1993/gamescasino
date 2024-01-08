@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #162447;
+            color: #e4f9f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card {
+            width: 100%;
+            margin-bottom: 10px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+            background-color: #1f4068;
+            color: #e4f9f5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .card-footer {
+            background-color: #162447;
+            text-align: center;
+            padding: 25px;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.5s;
+        }
+
+        .card-footer h5,
+        .card-footer p {
+            color: #e4f9f5;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: xx-large;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+
+        .rules h2 {
+            color: #e4f9f5;
+        }
+
+        .games {
+            margin-top: 8rem;
+        }
+
+        .btn {
+            width: 100%;
+            background-color: #48cae4;
+            color: #162447;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (min-width: 576px) {
+            .card {
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .games {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .card {
+                width: 48%;
+                margin-bottom: 10px;
+            }
+
+            .btn {
+                max-width: 12rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .card {
+                width: 30%;
+            }
+
+            .btn {
+                max-width: 15rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .card {
+                width: 22%;
+            }
+
+            .btn {
+                max-width: 18rem;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .games {
+                justify-content: space-between;
+            }
+        }
+
+        .rules {
+            color: #48cae4;
+            font-family: 'Poppins', sans-serif;
+            font-size: large;
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.5s;
+            padding-top: 50px;
+        }
+
+        .highlight-text {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .animate__animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        .go-back-btn {
+            margin-top: 20px;
+        }
+
+        .center-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 5px;
+        }
+         /* Hide on smaller screens and show on large screens */
+         .intro {
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .intro {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">DDS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="..//rules&bonus/Rules&Bonus.html">Rules & Bonus</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center intro">
+      <p class="rules">
+          <h2 class="display-4 fw-bold">📜Cash Out Rules</h2><br class="fs-4">
+          <span class="highlight-text">Min cash out is 3x of loaded</span><br class="fs-4">
+          <span class="highlight-text">Max cash out is 10x of loaded</span><br class="fs-4">
+          <span class="highlight-text">Less than $20 deposit Min/Max cash out is $60</span><br class="fs-4">
+          <span class="highlight-text">Less than $10 deposit Min/Max cash out is $30</span><br class="fs-4">
+          Point should be 50
+      </p>
+  </div>
+
+    <div class="container games">
+        <!-- GamesFirekirin -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/Firekrin.png" class="card-img-top" alt="FireKrin" >
+                <h5 class="card-title">FireKrin</h5>
+                <a href="https://www.facebook.com/dragonsweeps" class="btn btn-primary">Play Now</a>
+                <a href="https://firekirin.com/download-fire-kirin-app.html" target="_ " style="color:#c2c0da">Download</a>
+                
+            </div>
+        </div>
+        <!-- Gamesgamevault -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/game vault.png" class="card-img-top" alt="GamesVault" >
+                <h5 class="card-title">GamesVault</h5>
+                <a href="https://download.gamevault999.com/" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+        <!-- Gamesmilkyway -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/milkyway.webp" class="card-img-top" alt="Milkyway" >
+                <h5 class="card-title">Milkyway</h5>
+                <a href="https://milkywayapp.xyz/" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+        <!-- Gamesvpower -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/vpower.png" class="card-img-top" alt="Vpower" >
+                <h5 class="card-title">Vpower</h5>
+                <a href="http://www.vblink777.com/" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+        <!-- Gamesjuwa -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/juwa.jpeg" class="card-img-top" alt="Juwa" >
+                <h5 class="card-title">Juwa</h5>
+                <a href="https://apkfolder.net/apk/juwa-777/" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+        <!-- GamesOrion -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/orion stars.jpg" class="card-img-top" alt="OrionStars" >
+                <h5 class="card-title">Orionstars</h5>
+                <a href="https://www.orions.cc/download" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+        <!-- GamesUltraPanda -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/ultrapanda.jpg" class="card-img-top" alt="Ultrapanda" >
+                <h5 class="card-title">Ultrapanda</h5>
+                <a href="https://www.ultramonster.net/" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+        <!-- GamesXgame -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/xgame.jpg" class="card-img-top" alt="Xgame" >
+                <h5 class="card-title">Xgame</h5>
+                <a href="http://www.egame99.club" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+        <!-- Gamessirius -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/sirius.png" class="card-img-top" alt="Sirius" >
+                <h5 class="card-title">Sirius</h5>
+                <a href="http://m.gamesirius999.com/" class="btn btn-primary">Download</a>  
+            </div>
+        </div>
+        <!-- Gamespandamaster -->
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="../../static/assets/pandamaster.png" class="card-img-top" alt="Pandamaster" >
+                <h5 class="card-title">Pandamaster</h5>
+                <a href="https://pandamaster.com/app/" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+    </div>
+    <div class="center-button">
+        <a href="../rules&bonus/Rules&Bonus.html" class="btn btn-primary go-back-btn"><span class="animated-emoji">📜</span>Rules and Bonus🎁</a>
+    </div>
+
+    <div class="container card-footer">
+        <h5 class="card-title">The One and Only Online Casino</h5>
+        <p class="card-text">Trust and legit <br>
+            24/7 online and quick response</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        // Add animate__animated class to elements and use specific classes from Animate.css
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.animate__animated').forEach(function (element) {
+                element.classList.add('animate__fadeInUp'); // Example animation class
+            });
+        });
+    </script>
+</body>
+</html>
